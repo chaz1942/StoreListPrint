@@ -11,17 +11,17 @@ import org.json.JSONTokener;
  *
  */
 public class main {
-	public static String testData = "[ \"ITEM000010\",\"ITEM000002\",\"ITEM000004\","
-			+ "\"ITEM000004\",\"ITEM000011\",\"ITEM000007-2\",\"ITEM000002\","
+	public static String testData = "[ \"ITEM000009-2\",\"ITEM000004\",\"ITEM000004\","
+			+ "\"ITEM000004\",\"ITEM000011\",\"ITEM000007-3\",\"ITEM000002\","
+			+ "\"ITEM000010\",\"ITEM000006-3\"]";
+	public static String testData1 = "[ \"ITEM000010\",\"ITEM000002\",\"ITEM000002\","
+			+ "\"ITEM000007\",\"ITEM000010\",\"ITEM000007-2\",\"ITEM000004\","
 			+ "\"ITEM000010\",\"ITEM000009\"]";
-	public static String testData1 = "[ \"ITEM000010\",\"ITEM000002\",\"ITEM000004\","
-			+ "\"ITEM000004\",\"ITEM000010\",\"ITEM000007-2\",\"ITEM000002\","
-			+ "\"ITEM000010\",\"ITEM000009\"]";
-	public static String testData2 = "[ \"ITEM000001-2\",\"ITEM000002\",\"ITEM000004\","
-			+ "\"ITEM000004\",\"ITEM000010\",\"ITEM000007-2\",\"ITEM000002\","
+	public static String testData2 = "[ \"ITEM000001-2\",\"ITEM000003\",\"ITEM000004\","
+			+ "\"ITEM000004\",\"ITEM000010\",\"ITEM000005-6\",\"ITEM000002\","
 			+ "\"ITEM000010\",\"ITEM000009\"]";
 	public static String testData3 = "[ \"ITEM000001-3\",\"ITEM000002\",\"ITEM000004\","
-			+ "\"ITEM000004\",\"ITEM000010\",\"ITEM000007-2\",\"ITEM000002\","
+			+ "\"ITEM000003-5\",\"ITEM000010\",\"ITEM000007-2\",\"ITEM000002\","
 			+ "\"ITEM000010\",\"ITEM000009\"]";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

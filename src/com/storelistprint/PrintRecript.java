@@ -32,12 +32,12 @@ public class PrintRecript {
 			BasicItemInfo item = list.get(i);
 			String print;
 			if(item.totalPrice != item.finalPrice){
-				print = "名称：" + item.goodsName + "，数量：" + item.count + "，单价：" + item.price
-						+ "，小计：" + item.finalPrice + "(元)，节省"
+				print = "名称：" + item.goodsName + "，数量：" + item.count + item.unitOfQuantity + "，单价：" + item.price
+						+ "(元)，小计：" + (float)(Math.round(item.finalPrice*100))/100 + "(元)，节省"
 						+ (float)(Math.round((item.totalPrice-item.finalPrice)*100))/100 + "(元)";
 			}else{
-				print = "名称：" + item.goodsName + "，数量：" + item.count + "，单价：" + item.price
-						+ "，小计：" + item.finalPrice + "(元)";
+				print = "名称：" + item.goodsName + "，数量：" + item.count + item.unitOfQuantity + "，单价：" + item.price
+						+ "(元)，小计：" + (float)(Math.round(item.finalPrice*100))/100 + "(元)";
 			}
 			System.out.println(print);
 		}
@@ -50,7 +50,7 @@ public class PrintRecript {
 			if(listPrivilgeIndex[i] == 0)
 				break;
 			BasicItemInfo item = list.get(listPrivilgeIndex[i]-1);
-			System.out.println("名称：" + item.goodsName + "，数量：" + (item.count/3));
+			System.out.println("名称：" + item.goodsName + item.unitOfQuantity + "，数量：" + (item.count/3) + item.unitOfQuantity);
 			
 		}
 	}
@@ -62,9 +62,9 @@ public class PrintRecript {
 	 */
 	public void printPayInfo(float pay, float save,boolean privilge){
 		System.out.println("----------------------");
-		System.out.println("总计：" + pay + "(元)");
+		System.out.println("总计：" + (float)(Math.round(pay*100))/100 + "(元)");
 		if(privilge)
-			System.out.println("节省：" + save + "(元)");
+			System.out.println("节省：" + (float)(Math.round(save*100))/100 + "(元)");
 		System.out.println("**********************");
 	}
 }

@@ -25,12 +25,20 @@ public class AccountList {
 	 * @return				此款商品优惠后的总额
 	 */
 	private float getFinalPrice(int count,float price,int privilgeCode){
-		if(privilgeCode == 1)
-			return (float) (0.95*count*price);
-		else{
+		float result = 0f;
+		switch(privilgeCode){
+		case 0:
+			result = count*price;
+			break;
+		case 1:
+			result = (float) (0.95*count*price);
+			break;
+		case 2:
 			int privilgeNumber = count/3;
-			return price*(count - privilgeNumber);
+			result =  price*(count - privilgeNumber);
+			break;
 		}
+		return result;
 	}
 	/**
 	 * 

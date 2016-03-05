@@ -21,6 +21,7 @@ public class GetInputInFormation {
 	private List<BasicItemInfo> list = new ArrayList<BasicItemInfo>();
 	private HashMap<String,Float> map = new HashMap<String,Float>();
 	private HashMap<String,String> mapName = new HashMap<String,String>();
+	private HashMap<String,String> mapQuantity = new HashMap<String,String>();
 	private void getInputInformation(String inputString){
 		makeGoodsInfoTable();
 		JSONTokener jsonParser = new JSONTokener(inputString);
@@ -99,7 +100,8 @@ public class GetInputInFormation {
 				item.count = count;
 				item.goodsName = goodsName;
 				item.price = map.get(number);
-				if(count > 2){
+				item.unitOfQuantity = mapQuantity.get(number);
+				if(count > 2 && isPrivilge2(item.number)){
 					item.privilgeCode = 2;
 				}else{
 					item.privilgeCode = getPrivilgeCode(number);
@@ -112,7 +114,8 @@ public class GetInputInFormation {
 			item = list.get(result);
 			list.remove(result);
 			item.count += count;
-			if(item.count > 2){
+			if(item.count > 2 && isPrivilge2(item.number)){
+				
 				item.privilgeCode = 2;
 			}
 			list.add(item);
@@ -132,10 +135,18 @@ public class GetInputInFormation {
 	public void makeGoodsInfoTable(){
 		for(int i = 0 ; i < Config.price.length; ++i){
 			String[] strs = Config.price[i].split("%");
-			if(strs.length == 3){
+			if(strs.length == 4){
 				map.put(strs[0], Float.parseFloat(strs[1]));
 				mapName.put(strs[0],strs[2]);
+				mapQuantity.put(strs[0], strs[3]);
 			}
 		}
+	}
+	public boolean isPrivilge2(String number){
+		for(int i = 0; i < Config.priviligeRule.length; ++i){
+			if(number.equals(Config.priviligeRule[i]))
+				return true;
+		}
+		return false;
 	}
 }

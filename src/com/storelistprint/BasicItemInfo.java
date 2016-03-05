@@ -8,4 +8,5 @@ public class BasicItemInfo {
 	public float totalPrice;
 	public float finalPrice;
 	public float price;
+	public String unitOfQuantity;
 }
