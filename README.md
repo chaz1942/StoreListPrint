@@ -3,7 +3,7 @@
 ###ThoughtWorks' test issue,if you want know more about the issue please click link.
 https://jinshuju.net/f/n0ddSe
 ##Issue requirement description:
-####In supermakrt they use cash register system to settle accounts. The cash register will charge and print receipt, according to the customer's shopping cart and the privilge rule.
+####In supermakrt they use cash register system to settle accounts. The cash register will charge and print the receipt, according to the customer's shopping cart and the privilge rule.
 ####Now we know Information is: goods name, unit of quantity, unit price, category. We also could set rule so that can support different privilges. We need a module print receipt, the cash register will input a JSON data, the module shoule output settle accounts details information from consle.
     input example:
     [  
