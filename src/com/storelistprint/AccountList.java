@@ -50,8 +50,6 @@ public class AccountList {
 			payNumber += item.finalPrice;
 			save += (item.totalPrice - item.finalPrice);
 		}
-//		printList(list);
-//		printPrivilge();
 		PrintRecript r = new PrintRecript();
 		r.startPrint(list,listPrivilgeTwoIndex,payNumber,save,privilgeOne,privilgeTwo);
 		return payNumber;
@@ -64,7 +62,6 @@ public class AccountList {
 	private void markPrivilgeState(int number, int privilgeCode) {
 		// TODO Auto-generated method stub
 		
-//		System.out.println("number: " + number + " privilge: " + privilgeCode);
 		privilgeOne = true;
 		number++;
 		if(privilgeCode == 2){
@@ -72,20 +69,4 @@ public class AccountList {
 			privilgeTwo = true;
 		}
 	}
-
-//	public void printList(List<BasicItemInfo> list){
-//		for(int i = 0; i < list.size(); ++i){
-//			BasicItemInfo itemInfo = list.get(i);
-//			System.out.println(itemInfo.number + ":" + itemInfo.count + "-" + itemInfo.privilgeCode +
-//					"＋" + itemInfo.price + "*" + itemInfo.goodsName + "@" + itemInfo.totalPrice + "#" 
-//					+ itemInfo.finalPrice );
-//		}
-//	}
-//	public void printPrivilge(){
-//		for(int i = 0; i < Config.GOOGS_ITEM_NUMBER; ++i){
-//			if(listPrivilgeTwoIndex[i] == 0)
-//				break;
-//			System.out.println("PrivilgeTwo: " + listPrivilgeTwoIndex[i]);
-//		}
-//	}
 }

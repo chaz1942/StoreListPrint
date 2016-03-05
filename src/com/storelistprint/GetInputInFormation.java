@@ -55,7 +55,6 @@ public class GetInputInFormation {
 				e.printStackTrace();
 			}
 		}
-//		printList();
 	}
 	public List<BasicItemInfo> getStructureArray(String str){
 		getInputInformation(str);
@@ -119,13 +118,6 @@ public class GetInputInFormation {
 			list.add(item);
 		}
 	}
-//	public void printList(){
-//		for(int i = 0; i < list.size(); ++i){
-//			BasicItemInfo itemInfo = list.get(i);
-//			System.out.println(itemInfo.number + ":" + itemInfo.count + "-" + itemInfo.privilgeCode +
-//					"＋" + itemInfo.price + "*" + itemInfo.goodsName);
-//		}
-//	}
 	public int getPrivilgeCode(String number){
 		for(int i = 0; i < Config.discount.length; ++i){
 			if(number.equals(Config.discount[i])){
